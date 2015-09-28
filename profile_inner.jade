@@ -1,0 +1,29 @@
+div#profile
+    div#profile-greeting.container
+      div.row
+        div.col-md-12
+          div#greeting Welcome back, #{user.first_name}!
+    div#profile-files.container
+      div.row
+        div.col-md-10
+          h3 Your Files
+        div.col-md-2
+          button#files-upload.btn.btn-primary Upload File
+      div.row
+        div.col-md-12.centered
+          div#files-table
+            table.table.table-hover.table-responsive
+              tbody
+                tr
+                  th.text-center Number
+                  th.text-center File Name
+                  th.text-center Status
+                  th.text-center Upload Date
+                each file, i in files
+                  tr
+                    td= i+1
+                    td
+                      a(href="/files/#{file.id}")= file.filename
+                    td= file.statusPretty
+                    td= file.uploadDatePretty
+

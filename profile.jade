@@ -1,0 +1,22 @@
+extends _profile_layout
+
+append content
+  div#upload-form
+    form
+      div#upload-file-title
+        h3 File Upload
+      div#upload-file-info.
+        Upload a file here for printing.
+        You will be notified by email when your printed file is ready for pickup.
+      div.form-group
+        label(for="upload-file-input") URL of File to Print
+        br
+        input#upload-file-input(type="text")
+      div#upload-file-disclaimer.form-group.
+        By uploading this file you declare that you have permission from the copyright holder(s) to print this file.
+      div.form-group
+        button#upload-file-submit.btn.btn-primary Upload
+        button#upload-file-cancel.btn.btn-default(type="reset") Cancel
+  include ./profile_inner.jade
+
+append script
